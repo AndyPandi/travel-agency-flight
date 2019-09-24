@@ -31,19 +31,19 @@ push-to-releases:
         ports: "8001"
         username: $OKE_USERNAME
         password: $OKE_PASSWORD
-        repository: $OKE_REPOSITORY
-        registry: $OKE_REGISTRY
+        repository: $OKE_REGISTRY/$OKE_REPOSITORY
+        registry: https://$OKE_REGISTRY/v2
 
-deploy-to-oke:
-  box:
-        id: alpine
-        cmd: /bin/sh
-  steps:
-    - bash-template
-    
-    - script:
-        name: "Visualise Kubernetes config"
-        code: cat kubernetes-deployment.yml
+#deploy-to-oke:
+#  box:
+#        id: alpine
+#        cmd: /bin/sh
+#  steps:
+#    - bash-template
+#    
+#    - script:
+#        name: "Visualise Kubernetes config"
+#        code: cat kubernetes-deployment.yml
     
  #   - kubectl:
  #       name: delete deplyoment
@@ -52,9 +52,9 @@ deploy-to-oke:
  #       insecure-skip-tls-verify: true
  #       command: delete -f $WERCKER_ROOT/kubernetes-deployment.yml --namespace=$APP_NAMESPACE
 
-    - kubectl:
-        name: create deplyoment
-        server: $KUBERNETES_MASTER
-        token: $KUBERNETES_TOKEN
-        insecure-skip-tls-verify: true
-        command: create -f $WERCKER_ROOT/kubernetes-deployment.yml --namespace=$APP_NAMESPACE
+#    - kubectl:
+#        name: create deplyoment
+#        server: $KUBERNETES_MASTER
+#        token: $KUBERNETES_TOKEN
+#        insecure-skip-tls-verify: true
+#        command: create -f $WERCKER_ROOT/kubernetes-deployment.yml --namespace=$APP_NAMESPACE
