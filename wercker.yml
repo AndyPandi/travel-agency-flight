@@ -22,7 +22,7 @@ build:
             ls -l /pipeline/source/
             go version
 
-push-image:
+push-to-releases:
   steps:
     # Push to OCI Registry
     - internal/docker-push:
@@ -34,16 +34,16 @@ push-image:
         ports: 8001
         cmd: /pipeline/source/GoRun
 
-#deploy-to-oke:
-#  box:
-#        id: alpine
-#        cmd: /bin/sh
-#  steps:
-#    - bash-template
-#    
-#    - script:
-#        name: "Visualise Kubernetes config"
-#        code: cat kubernetes-deployment.yml
+deploy-to-oke:
+  box:
+        id: alpine
+        cmd: /bin/sh
+  steps:
+    - bash-template
+    
+    - script:
+        name: "Visualise Kubernetes config"
+        code: cat kubernetes-deployment.yml
     
  #   - kubectl:
  #       name: delete deplyoment
@@ -52,9 +52,9 @@ push-image:
  #       insecure-skip-tls-verify: true
  #       command: delete -f $WERCKER_ROOT/kubernetes-deployment.yml --namespace=$APP_NAMESPACE
 
-#    - kubectl:
-#        name: create deplyoment
-#        server: $KUBERNETES_MASTER
-#        token: $KUBERNETES_TOKEN
-#        insecure-skip-tls-verify: true
-#        command: create -f $WERCKER_ROOT/kubernetes-deployment.yml --namespace=$APP_NAMESPACE
+    - kubectl:
+        name: create deplyoment
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: create -f $WERCKER_ROOT/kubernetes-deployment.yml --namespace=$APP_NAMESPACE
