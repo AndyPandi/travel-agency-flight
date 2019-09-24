@@ -22,18 +22,18 @@ build:
             ls -l /pipeline/source/
             go version
 
-push-to-releases:
+push-image:
   steps:
     # Push to OCI Registry
     - internal/docker-push:
-        tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
-        cmd: /pipeline/source/GoRun
-        ports: "8001"
         username: $OKE_USERNAME
         password: $OKE_PASSWORD
         repository: $OKE_REGISTRY/$OKE_REPOSITORY
         registry: https://$OKE_REGISTRY/v2
-
+        tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        working-dir: /pipeline/source
+        ports: 8080
+        cmd: /pipeline/source/GoRun
 #deploy-to-oke:
 #  box:
 #        id: alpine
