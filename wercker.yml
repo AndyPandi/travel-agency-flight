@@ -34,7 +34,6 @@ push-image:
         working-dir: /pipeline/source
         ports: 8080
         cmd: /pipeline/source/GoRun
-
 #deploy-to-oke:
 #  box:
 #        id: alpine
