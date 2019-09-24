@@ -31,9 +31,9 @@ push-image:
         repository: $OKE_REGISTRY/$OKE_REPOSITORY
         registry: https://$OKE_REGISTRY/v2
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
-        working-dir: /pipeline/source
-        ports: 8080
+        ports: 8001
         cmd: /pipeline/source/GoRun
+        
 #deploy-to-oke:
 #  box:
 #        id: alpine
