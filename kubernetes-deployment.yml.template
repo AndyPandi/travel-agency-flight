@@ -5,7 +5,7 @@ metadata:
   labels:
     run: ta-flight
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     rollingUpdate:
       maxSurge: 1
