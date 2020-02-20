@@ -44,6 +44,10 @@ deploy-to-oke:
     - script:
         name: "Visualise Kubernetes config"
         code: cat kubernetes-deployment.yml
+
+    - script:
+        name: "Visualise Kubernetes config"
+        code: echo $KUBECONFIG
     
 #    - kubectl:
 #        name: delete namespace
