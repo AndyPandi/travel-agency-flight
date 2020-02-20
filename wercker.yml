@@ -51,7 +51,7 @@ deploy-to-oke:
 
     - script:
         name: "TEST2"
-        code: export KUBECONFIG=$HOME/config
+        code: export KUBECONFIG=/pipeline/source/config
 
     - script:
         name: "TEST3"
