@@ -47,11 +47,11 @@ deploy-to-oke:
 
     - script:
         name: "TEST1"
-        code: cat config
+        code: pwd
 
     - script:
         name: "TEST2"
-        code: export KUBECONFIG=$HOME/.kube/config
+        code: export KUBECONFIG=$HOME/config
 
     - script:
         name: "TEST3"
