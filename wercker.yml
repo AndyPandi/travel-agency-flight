@@ -45,17 +45,13 @@ deploy-to-oke:
         name: "Visualise Kubernetes config"
         code: cat kubernetes-deployment.yml
 
-    - script:
-        name: "TEST1"
-        code: pwd
+#    - script:
+#        name: "TEST2"
+#        code: export KUBECONFIG=$WERCKER_ROOT/config
 
-    - script:
-        name: "TEST2"
-        code: export KUBECONFIG=/pipeline/source/config
-
-    - script:
-        name: "TEST3"
-        code: cat $KUBECONFIG
+#    - script:
+#        name: "TEST3"
+#        code: cat $KUBECONFIG
 
 #    - kubectl:
 #        name: delete namespace
