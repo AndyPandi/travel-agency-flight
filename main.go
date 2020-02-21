@@ -70,7 +70,7 @@ func main() {
 	flights = append(flights, Flight{ID: "1", Airline: "SZ", Departure: "ShenZhen", Destination: "Beijing", Flytime: JSONTime{time.Now()}, Class: "First", Off: 0.1, Original: 2202})
 	flights = append(flights, Flight{ID: "3", Airline: "KR", Departure: "Bangkok", Destination: "Beijing", Class: "Bussiness", Off: 0.3, Original: 1290})
 	flights = append(flights, Flight{ID: "4", Airline: "AS", Departure: "Bangkok", Destination: "Beijing", Class: "Bussiness", Off: 0.3, Original: 1290})
-	flights = append(flights, Flight{ID: "5", ta-flight-756f964d44-n9rxqAirline: "CA", Departure: "Bangkok", Destination: "Beijing", Class: "Bussiness", Off: 0.3, Original: 1290})
+	flights = append(flights, Flight{ID: "5", Airline: "unnamed", Departure: "Bangkok", Destination: "Beijing", Class: "Bussiness", Off: 0.3, Original: 1290})
 	flights = append(flights, Flight{ID: "6", Airline: "CA", Departure: "Bangkok", Destination: "Beijing", Class: "Bussiness", Off: 0.3, Original: 1290})
 	flights = append(flights, Flight{ID: "7", Airline: "CA", Departure: "Bangkok", Destination: "Beijing", Class: "Bussiness", Off: 0.3, Original: 1290})
 	flights = append(flights, Flight{ID: "8", Airline: "CA", Departure: "Bangkok", Destination: "Beijing", Class: "Bussiness", Off: 0.3, Original: 1290})
